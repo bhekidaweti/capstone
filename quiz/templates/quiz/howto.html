@@ -1,0 +1,41 @@
+{% extends "quiz/layout.html" %}
+
+
+
+{% block body %}
+<div class="center">
+    
+
+<h1> Welcome to the Flag Quiz Game!</h1>
+
+The Flag Quiz Game is an exciting and educational game that tests your knowledge of world flags. 
+In this game, you'll be presented with a series of questions where you'll need to match the displayed
+ country name with its corresponding flag. 
+Sounds fun, right?
+
+To get started, simply click the "Start the Quiz" button. 
+Once you begin, you'll see a country name displayed at the top, along with four flag images below it.
+ Your task is to select the flag that represents the displayed country name. 
+ Click on the flag that you think matches the country name correctly.
+
+But here's the catch – you only have a limited amount of time to answer each question! 
+Keep an eye on the countdown timer displayed in the top right corner of the screen. 
+If you run out of time before making a selection, don't worry, you can always try again.
+
+For every correct answer, you'll earn points and move on to the next question. 
+But be careful – if you choose the wrong flag, you'll need to try again. 
+Your score will be displayed at the top left corner of the screen, so keep track of how well you're doing!
+
+Once you've answered all the questions or the time runs out, you'll see your final score.
+ If you want to play again, simply click the "Restart" button to start a new quiz. 
+ If you're ready to continue your quiz journey, click "Continue" to load the next set of questions.
+
+So, are you ready to put your flag knowledge to the test? 
+Let's play the Flag Quiz Game and see how many flags you can match correctly!
+</div>
+<p>
+<div class="center">    
+    <a href="{% url 'quiz'%}"><button class="btn btn-primary">Now lets get back the Quiz</button></a>
+</div>
+
+{% endblock %}

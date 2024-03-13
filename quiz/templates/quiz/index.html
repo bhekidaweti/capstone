@@ -1,0 +1,49 @@
+{% extends "quiz/layout.html" %}
+
+{% block body %}
+    {% load static %}
+    <div class="center">
+        <div class="logo-container">
+            <img src="{% static 'world-flags-logo.png' %}" style="height: 200px; width: 200px;">
+            <div>
+                <a href="{% url 'howto'%}">How to play FunWithWorld Flags Quiz</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="center">
+        <div id="result">Results:</div>
+    </div>
+    <div class="center" >
+        <button class="btn btn-primary" id="startButton">Start the quiz</button>
+        <button class="btn btn-primary" id="continueButton"  style="display: none;">Click to load Quiz</button>
+        <button class="btn btn-primary" id="restartButton" style="display: none;">Restart</button>
+    </div>
+    <div class="center">
+        <div class="row">
+            <div class="col-md-12 bg-light text-right">
+                <button type="button" class="btn btn-secondary" id="score">Score: </button><span id="scoreValue">0</span>
+                <i class="fa-solid fa-clock"></i><button type="button" class="btn btn-warning" id="countdown"></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="quiz" style="display: none;">
+        <!-- Quiz content goes here -->
+        <div class="center">
+            Click the correct flag that matches the country name given below:
+        </div>
+        <div id="country_name">
+            <button id="correct_country_button" class="btn btn-success">
+                {{ correct_country.name }}
+            </button>
+        </div>
+        {% load static %}
+        {% for country in countries %}
+        <div class="flag-container">
+            <img src="{{ country.flag.url }}" class="rounded float-start flag" alt="{{ country.name }}" data-country-id="{{ country.id }}" class="flag">
+        </div>
+        {% endfor %}
+    </div>
+ 
+{% endblock %}

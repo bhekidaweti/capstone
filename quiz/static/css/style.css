@@ -1,0 +1,42 @@
+.flag-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    border: 1px solid black;
+    background-color: orange;
+    margin: auto; 
+    padding: 10px;
+    max-width: 300px; 
+    width: auto; 
+}
+
+.flag-container .flag {
+    width: 100px; 
+    height: auto; 
+}
+
+#country_name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: larger;
+    
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: larger;
+}
+.logo-container {
+    text-align: center; 
+}
+
+.logo-container img {
+    display: block; 
+    margin: 0 auto; /
+}
