@@ -58,8 +58,7 @@ function loadNextSession() {
             // Hide result message
             $("#result").empty();
             // Hide continue and restart buttons
-            $("#continueButton").hide();
-            $("#restartButton").hide();
+            $("#continueButton").hide();            
             // Reattach click event handler to flag images
             attachFlagClickHandler();
         })
@@ -124,12 +123,6 @@ function handleUserChoice(countryName, correctCountryName) {
         $("#quiz").show();        
     });
 
-    // Event handler for the restart button
-    $("#restartButton").click(function() {
-        $("#restartButton").hide(); // Hide restart button        
-        startQuiz(); // Restart the quiz
-    });
-
     // Function to start the timer
     function startTimer() {
         var startTime = Date.now();
@@ -142,7 +135,7 @@ function handleUserChoice(countryName, correctCountryName) {
             if (remainingTime <= 0) {
                 clearInterval(timer);
                 $("#result").text("Time's up!Game over ");
-                $("#restartButton").show(); // Show restart button
+                location.reload();
             }
         }, 1000);
     }
