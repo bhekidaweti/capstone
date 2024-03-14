@@ -93,7 +93,7 @@ function handleUserChoice(countryName, correctCountryName) {
             // Code for handling incorrect answer
             $("#result").text("Incorrect. Please try again.Page will reload in few seconds...");
             setTimeout(function() {
-                location.reload(); // Reload the page or any other appropriate action
+                location.reload(); // Reload the page 
             }, 3000);
             
         }
