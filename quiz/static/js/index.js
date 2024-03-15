@@ -57,8 +57,7 @@ function loadNextSession() {
             startTimer();
             // Hide result message
             $("#result").empty();
-            // Hide continue and restart buttons
-            $("#continueButton").hide();            
+            // Hide continue and restart buttons                     
             // Reattach click event handler to flag images
             attachFlagClickHandler();
         })
@@ -77,8 +76,7 @@ function handleUserChoice(countryName, correctCountryName) {
             $("#result").text("Correct! You selected the right flag.");
             score++; // Increment score for correct answer
             displayScore(score); // Update and display score
-            sessionStorage.setItem('score', score); // Store score in sessionStorage
-            $("#continueButton").show(); // Show continue button
+            sessionStorage.setItem('score', score); // Store score in sessionStorage          
             correctAnswerSelected = true; // Mark the correct answer as selected
         } else {
             // Alert if the correct answer has already been selected
@@ -116,12 +114,6 @@ function handleUserChoice(countryName, correctCountryName) {
         startQuiz();
     });
 
-    // Event handler for the continue button
-    $("#continueButton").click(function() {
-        $("#continueButton").hide(); // Hide continue button
-        loadNextSession(); // Load next session
-        $("#quiz").show();        
-    });
 
     // Function to start the timer
     function startTimer() {
