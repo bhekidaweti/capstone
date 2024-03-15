@@ -13,7 +13,7 @@ $(document).ready(function() {
         startTimer(); // Start the timer
     }
 
-    // Function to attach click event handler to flag images
+// Function to attach click event handler to flag images
 function attachFlagClickHandler() {
     $(".flag").click(function() {
         var countryName = $(this).attr('alt'); // Grabbing the country name from the alt attribute in the img url 
