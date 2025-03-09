@@ -1,68 +1,60 @@
-# Distinctiveness and Complexity #
-## Distinctiveness ##
-The FunWithFlags quiz application stands out from other projects i have been  exposed to in this course due to its unique concept of testing users' knowledge of world flags. While other web applications in the course were more focused on general structures of the code, FunWithFlags specializes in flags, providing users with a fun and engaging way to learn about different countries and their flags. So in this way my project is very engaging and I had to dig deeper to come with a logic for various pieces of the code I have written.
+# Flag Quiz Django Project
+This app tests users' knowledge of world flags by having them match a flag image with a randomly provided country name.
 
+-Users must select the correct flag within a specific time limit (e.g., 15 seconds).
+-If the user fails to click a flag within the time limit, no points are awarded.
+-Clicking the correct flag within the time limit adds one point to the scoreboard.
+-Clicking an incorrect flag resets the game to the beginning.
 
-Additionally, the application incorporates dynamic content generation, where questions are randomly selected from a database of countries and their corresponding flags. This randomness ensures that each quiz session is unique, enhancing the user experience and promoting repeated use.
+## Stack
 
-## Complexity ##
-The project exhibits complexity in several aspects:
+Backend: Django (with models to store flags and game logic).
+Frontend: Django templates and vanilla JavaScript for interactive flag matching.
+Styling: Basic CSS for UI presentation.
 
-### Dynamic Content Generation: ###
-The application dynamically generates quiz questions and answers based on the data stored in the database. This requires complex backend logic to retrieve and process the data before presenting it to the user.
+## Features
 
-### User Interaction: ###
-Implementing features like score tracking, timer management, and handling user inputs (clicking on flags) adds complexity to the frontend and backend code. Ensuring that the application responds accurately to user actions and provides timely feedback requires careful design and implementation.
+-Timed flag selection to challenge users' speed and knowledge.
+-Score tracking to measure progress.
+-Randomized flag display to ensure varied gameplay.
+-Restart mechanism upon incorrect selection.
 
-### Fetch API Integration: ###
- The use of the Fetch API for fetching new quiz questions without reloading the entire page enhances the user experience by providing seamless transitions between quiz sessions. Integrating the Fetch API functionality requires a deep understanding of JavaScript and backend frameworks like Django.
+## Deployment & Challenges
 
-### Responsive Design: ###
- The application is designed to be responsive, meaning it adapts to different screen sizes and devices. Achieving responsiveness involves complex CSS styling and layout adjustments to ensure optimal user experience across various devices, including desktops, tablets, and smartphones.
+The app was initially deployed on AWS, but due to affordability concerns, 
+I decided to rebuild it as a React version with the same core functionality.
+ repo for React version `https://github.com/bhekidaweti/flag-quiz-json`
 
-### User Feedback: ###
- The application provides real-time feedback to users, including dynamically updating scores for each correct answer given by user, correct/incorrect answer messages, and prompts to continue or restart the quiz. Managing user feedback requires intricate frontend and backend coordination to deliver a smooth and intuitive user experience.
+One of the biggest technical challenges I faced was handling static files during deployment.
+Unlike JavaScript-based projects, where files are primarily treated as static assets, 
+Django requires special handling for static files on cloud providers. 
+Configuring storage backends, managing collectstatic, and ensuring proper static file serving across different hosting environments
+ (e.g., AWS, Netlify, or alternative providers) was a significant hurdle.
 
-Overall, the FunWithFlags quiz application demonstrates both distinctiveness in its unique concept and complexity in its implementation, making it a compelling and engaging web project.
+## Future Improvements
+-First work on my Django deployment skills and continue to work on the Django verson of the app as well.
+-Adding a leaderboard to track high scores.
+-Implementing difficulty levels (e.g., Easy, Medium, Hard).
+-Enhancing UI/UX with animations and better styling.
+-Introducing a multiplayer mode for competitive gameplay.
 
-# File Contents #
-## HTML Templates ##
-### index.html: ###
- Main template file containing the layout structure and user interface elements.
-### layout.html: ###
-Base template file containing the common layout elements shared across multiple pages.
-### howto.html: ###
-This page gives a brief description of how to play the quiz and what each click buton does.
-Its purpose is to orientate users about FunWithFlags Quiz thereby enhacing their session experience
+## Accesing the project locally
+To test my project locally, you can follow these steps:
 
-## CSS Stylesheets ##
-### styles.css: ###
- Contains custom CSS styles for styling the application's user interface.
-## JavaScript ##
-### index.js: ###
-Implements client-side logic for quiz functionality, including Fetch API requests, user interaction handling, and timer management.
-## Python ##
-### views.py: ###
- Defines Django views for serving HTML pages and handling AJAX requests.
-### models.py: ###
- Defines Django models for storing data related to countries and flags.
-# Other Files #
-## requirements.txt: ##
-Lists Python packages required to run the web application.
-world-flags-logo.png: Image file used as the application logo
-
-## Running the Application ##
-To run the FunWithFlags quiz application, follow these steps:
-
-Clone the repository to your local machine.
-Navigate to the project directory.
-Install the required Python packages listed in requirements.txt using pip: pip install -r requirements.txt.
-Run the Django development server: python manage.py runserver.
-Access the application in your web browser at http://localhost:8000.
-
-## Additional Informationn ##
-The application utilizes Django, a high-level Python web framework, for backend development. 
-The Fetch API is used to fetch new quiz questions asynchronously, providing a seamless user experience. Initially, my idea was to use the fetch API to get data from a remote server(that is from someone else's API ) but I like to have full control of this project as I plan to continue adding features beyond the CS50 course, so I went against the idea of a remote API and decided to rather upload the content in my local server and havemy own database. 
-The project follows the MVC (Model-View-Controller) architectural pattern for organizing code and separating concerns.
-The application is designed to be scalable and extensible, allowing for future enhancements and feature additions
-I really enjoyed working on this project and I will keep working on it to add more features and hopefully deploy it to the internet.
+1. Clone the repository to your local machine.
+   ```
+     git clone https://github.com/bhekidaweti/capstone.git
+   ```
+2. Navigate to the project directory.
+   ```
+     cd capstone
+   ```   
+3. Install the required Python packages listed in requirements.txt using pip:
+   ```
+     pip install -r requirements.txt
+   ```
+4. Run the Django development server:
+ ```
+   python manage.py runserver
+   ```
+5. Access the application in your web browser at http://localhost:8000.
